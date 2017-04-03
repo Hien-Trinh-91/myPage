@@ -13,7 +13,7 @@
   }
 
   var config = {
-    appErrorPrefix: '[isite Error] ',
+    appErrorPrefix: '[Green World Error] ',
     appTitle: 'Green World'
   };
 

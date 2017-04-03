@@ -5,9 +5,9 @@
     .module('app.login')
     .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['logger', '$state'];
+  LoginController.$inject = ['logger', '$state', 'localStorageService'];
   /* @ngInject */
-  function LoginController(logger, $state) {
+  function LoginController(logger, $state, localStorageService) {
     var vm = this;
     vm.title = 'Admin';
     vm.submit = submit;
@@ -18,8 +18,9 @@
     }
 
     function submit(user) {
-      if ((user.name === "admin") & (user.password === "123456")) {
-        $state.go('dasboard');
+      if ((user.name === "admin") && (user.password === "123456")) {
+        localStorageService.set('username', user.name);
+        $state.go('dashboard');
       } else {
         logger.error('Invalid Username or Password');
       }
