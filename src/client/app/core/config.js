@@ -14,7 +14,7 @@
 
   var config = {
     appErrorPrefix: '[isite Error] ',
-    appTitle: 'isite'
+    appTitle: 'Green World'
   };
 
   core.value('config', config);
