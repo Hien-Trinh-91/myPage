@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -12,21 +12,21 @@
   }
 
   function getStates() {
-    return [
-      {
-        state: 'dashboard',
-        config: {
-          url: '/dashboard',
-          templateUrl: 'app/dashboard/dashboard.html',
-          controller: 'DashboardController',
-          controllerAs: 'vm',
-          title: 'dashboard',
-          settings: {
-            nav: 1,
-            content: '<i class="fa fa-dashboard"></i> Dashboard'
+    return [{
+      state: 'dashboard',
+      config: {
+        url: '/dashboard',
+        views: {
+          '': {
+            templateUrl: 'app/main/main.html'
+          },
+          'main@dashboard': {
+            templateUrl: 'app/dashboard/dashboard.html',
+            controller: 'DashboardController',
+            controllerAs: 'vm',
           }
         }
       }
-    ];
+    }];
   }
 })();
