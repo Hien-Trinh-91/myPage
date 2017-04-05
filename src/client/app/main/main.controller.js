@@ -16,11 +16,10 @@
     ////////////////
 
     function activate() {
-      var token = localStorageService.get('token');
-      if (token !== null) {
-        $state.go('dashboard');
-      } else {
+      if (!localStorageService.get('username')) {
         $state.go('login');
+      } else {
+        $state.go('dashboard');
       }
     }
   }
