@@ -23,8 +23,8 @@
     function activate() {
       logger.success(config.appTitle + ' loaded!', null);
       hideSplash();
-      if (!localStorageService.get('username')) {
-        vm.user = localStorageService.get('username');
+      if (localStorageService.get('username')) {
+        vm.navline.text = localStorageService.get('username');
       }
     }
 
